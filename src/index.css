@@ -1,0 +1,56 @@
+.board-box {
+  height: 32em;
+}
+
+.board-row {
+  line-height: normal;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.game-board {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rotate {
+  animation: rotation 14s infinite linear;
+}
+
+.square {
+    height: 4em;
+    width: 4em;
+}
+
+.square.black {
+    background-color: deepskyblue;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (orientation: portrait) {
+  .board-box {
+    height: 100vw;
+  }
+
+  .square {
+    height: 12vw;
+    width: 12vw;
+  }
+}

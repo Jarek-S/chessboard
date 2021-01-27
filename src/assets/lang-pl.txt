@@ -1,0 +1,4 @@
+﻿Opis:
+Celem gry jest ułożenie z powrotem szachownicy takiej jak na starcie. W wersji najłatwiejszej da się to zrobić w 6 ruchach, na średnim poziomie trudności – w 8, na najwyższym – w 10.
+Ruch wykonuje się klikając w wybrane pole. Powoduje to zmianę jego koloru – oraz kolorów pól sąsiadujących z nim w poziomie i w pionie.
+

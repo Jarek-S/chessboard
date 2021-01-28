@@ -1,20 +1,9 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Switch from '@material-ui/core/Switch';
 import Collapse from '@material-ui/core/Collapse';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        height: 180,
-    },
-    container: {
-        display: 'flex'
-    },
-    paper: {
-        margin: theme.spacing(1)
-    }
-}));
+import { Grid } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 const msg = {
     hints: "Rozwiązanie: ",
@@ -25,32 +14,33 @@ const msg = {
 };
 
 export default function ModeSwitcher(props) {
-    const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <FormControlLabel
-                control={<Switch checked={props.trainingOn} disabled={props.trainingOn} onChange={props.handleTrainingChange} />}
-                label={msg.trainingOn}
-            />
-            <div className={classes.container}>
+        <Grid container xs={12} direction="column" justify="space-around" className="mode-switcher">
+            <Grid item>
+                <FormControlLabel
+                    control={<Switch checked={props.trainingOn} disabled={props.trainingOn} onChange={props.handleTrainingChange} />}
+                    label={msg.trainingOn}
+                />
+            </Grid>
+            <Grid item>
                 <Collapse in={props.trainingOn}>
                     <FormControlLabel
                         control={<Switch checked={props.hintsOn} onChange={props.handleHintsChange} />}
                         label={msg.hintsOn}
                     />
                     <Collapse in={props.hintsOn}>
-                        <div>{msg.hints}{props.hints}</div>
+                        <Typography>{msg.hints}{props.hints}</Typography>
                     </Collapse>
                     <FormControlLabel
                         control={<Switch checked={props.historyOn} onChange={props.handleHistoryChange} />}
                         label={msg.historyOn}
                     />
                     <Collapse in={props.historyOn}>
-                        <div>{msg.history}{props.history}</div>
+                        <Typography>{msg.history}{props.history}</Typography>
                     </Collapse>
                 </Collapse>
-            </div>
-        </div>
+            </Grid>
+        </Grid>
     );
 }

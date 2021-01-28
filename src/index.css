@@ -18,17 +18,21 @@
   transform: translateY(-50%);
 }
 
+.mode-switcher {
+  margin-top: 2vh;
+}
+
 .rotate {
   animation: rotation 14s infinite linear;
 }
 
 .square {
-    height: 4em;
-    width: 4em;
+  height: 4em;
+  width: 4em;
 }
 
 .square.black {
-    background-color: deepskyblue;
+  background-color: deepskyblue;
 }
 
 iframe {
@@ -47,6 +51,10 @@ iframe {
 @media (orientation: portrait) {
   .board-box {
     height: 100vw;
+  }
+
+  .mode-switcher {
+    margin-top: 3vh;
   }
 
   .square {

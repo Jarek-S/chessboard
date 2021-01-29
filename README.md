@@ -1,2 +1,2 @@
 # chessboard
-Simple board game created for practicing React. 
+Simple board game created as practice of React. 
